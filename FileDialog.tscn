@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://FileDialog.gd" type="Script" id=1]
+
+[node name="FileDialog" type="FileDialog"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 313.0
+margin/top = 134.0
+margin/right = 692.0
+margin/bottom = 537.0
+popup/exclusive = false
+window/title = "Open a File"
+dialog/hide_on_ok = false
+mode = 0
+access = 2
+filters = StringArray(  )
+show_hidden_files = false
+script/script = ExtResource( 1 )
+
+[connection signal="confirmed" from="." to="." method="_on_FileDialog_confirmed"]
+
+
