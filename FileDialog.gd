@@ -1,11 +1,9 @@
 extends FileDialog
 
 func _ready():
-	popup()
 	add_filter("*.txt")
 
-
-func _on_FileDialog_confirmed():
+func _on_fdg_selector_confirmed():
 	var file_path = get_current_path()
 	var file = File.new()
 	file.open(file_path, file.READ)

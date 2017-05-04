@@ -1,26 +1,56 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=3 format=1]
 
-[ext_resource path="res://FileDialog.gd" type="Script" id=1]
+[ext_resource path="res://button.gd" type="Script" id=1]
+[ext_resource path="res://FileDialog.gd" type="Script" id=2]
 
-[node name="FileDialog" type="FileDialog"]
+[node name="Root" type="Control"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 313.0
-margin/top = 134.0
-margin/right = 692.0
-margin/bottom = 537.0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 800.0
+margin/bottom = 600.0
+
+[node name="btn_selectFile" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 17.0
+margin/top = 209.0
+margin/right = 163.0
+margin/bottom = 229.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Selecciona el archivo"
+flat = false
+script/script = ExtResource( 1 )
+
+[node name="fdg_selector" type="FileDialog" parent="."]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 64.0
+margin/top = 55.0
+margin/right = 611.0
+margin/bottom = 518.0
 popup/exclusive = false
-window/title = "Open a File"
+window/title = "Abrir un archivo"
 dialog/hide_on_ok = false
 mode = 0
 access = 2
 filters = StringArray(  )
 show_hidden_files = false
-script/script = ExtResource( 1 )
+script/script = ExtResource( 2 )
 
-[connection signal="confirmed" from="." to="." method="_on_FileDialog_confirmed"]
+[connection signal="confirmed" from="fdg_selector" to="fdg_selector" method="_on_fdg_selector_confirmed"]
 
 
