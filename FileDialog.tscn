@@ -43,13 +43,30 @@ margin/top = 55.0
 margin/right = 611.0
 margin/bottom = 518.0
 popup/exclusive = false
-window/title = "Abrir un archivo"
+window/title = "Open a File"
 dialog/hide_on_ok = false
 mode = 0
 access = 2
 filters = StringArray(  )
 show_hidden_files = false
 script/script = ExtResource( 2 )
+
+[node name="txt_read" type="TextEdit" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 457.0
+margin/top = 154.0
+margin/right = 717.0
+margin/bottom = 441.0
+syntax_highlighting = false
+show_line_numbers = false
+highlight_all_occurrences = false
+caret/block_caret = false
+caret/caret_blink = false
+caret/caret_blink_speed = 0.65
 
 [connection signal="confirmed" from="fdg_selector" to="fdg_selector" method="_on_fdg_selector_confirmed"]
 
