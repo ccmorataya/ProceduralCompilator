@@ -10,5 +10,10 @@ func _on_fdg_selector_confirmed():
 	file.open(file_path, file.READ)
 	var content = file.get_as_text()
 	file.close()
-	print(content)
 	txt.set_text(content)
+	
+	var regexTerminal = RegEx.new()
+	regexTerminal.compile("a-z")
+	var terminalPosition = regexTerminal.find(content)
+	var terminalString = regexTerminal.get_capture(terminalPosition)
+	print(terminalString)
