@@ -13,7 +13,7 @@ func _on_fdg_selector_confirmed():
 	txt.set_text(content)
 	
 	var regexTerminal = RegEx.new()
-	regexTerminal.compile("a.d")
+	regexTerminal.compile("[a-z]")
 	var terminalPosition = regexTerminal.find(content)
 	var terminalString = regexTerminal.get_captures()
 	print(terminalString)
